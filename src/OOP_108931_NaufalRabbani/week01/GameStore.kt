@@ -6,7 +6,10 @@ fun main(){
 
     val finalPrice = calculateDiscount(price)
 
-    println(printReceipt(title = gameTitle, finalPrice = finalPrice))
+    val userNote: String? = null
+
+    printReceipt(title = gameTitle, finalPrice = finalPrice)
+    println("Catatan pembeli: ${userNote ?: "Tidak ada catatan"}")
 }
 
 fun calculateDiscount(price: Int): Int = when{
