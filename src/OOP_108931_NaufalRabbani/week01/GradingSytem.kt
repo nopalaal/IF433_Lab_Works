@@ -14,6 +14,12 @@ fun main(){
         in 70..79 -> "C"
         else -> "D"
     }
+
+    val StudentId: String? = null
+    val idLength = StudentId?.length ?: 0
+
+    println("Panjang ID Mahasiswa: $idLength")
+
     println("Grade Anda adalah $grade")
     println("anda dinyatakan ${calculateStatus(score)}")
 }
