@@ -3,6 +3,9 @@ package OOP_108931_NaufalRabbani.Week03
 class Employee(
     val name: String,
 ) {
+    val tax: Double
+        get() = salary * 0.1
+
     var salary: Int = 0
         set(value) {
             if (value < 0) {
@@ -24,4 +27,6 @@ class Employee(
     fun printStatus(){
         println("Nama: $name, Gaji: $salary, Rating: $perfomanceRating")
     }
+
+
 }
