@@ -4,4 +4,5 @@ fun main(){
     val e = Employee("Asep")
     println("test error")
     e.salary = 50000000
+
 }

@@ -4,8 +4,13 @@ class Employee(
     val name: String,
 ) {
     var salary: Int = 0
-        set(value){
-            println("mencoba set gaji ke $value")
-            this.salary = value
+        set(value) {
+            if (value < 0) {
+                println("ERROR: Gaji ga bole mines")
+                field = 0
+
+            } else {
+                field = value
+            }
         }
 }
