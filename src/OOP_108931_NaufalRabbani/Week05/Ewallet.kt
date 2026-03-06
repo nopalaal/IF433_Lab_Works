@@ -1,6 +1,6 @@
 package OOP_108931_NaufalRabbani.Week05
 
-class Ewallet(accountName: String, val balance: Int): PaymentMethod(accountName){
+class Ewallet(accountName: String, var balance: Double): PaymentMethod(accountName){
     override fun prcoessPayment(amount: Double) {
         if(balance >= amount){
             val newBalance = balance - amount
@@ -11,8 +11,8 @@ class Ewallet(accountName: String, val balance: Int): PaymentMethod(accountName)
         }
     }
 
-    fun topUp(amount: Int){
-        val newBalance = balance + amount
-        println("Top up sebesar $amount berhasil. Saldo baru: $newBalance")
+    fun topUp(amount: Double){
+        balance += amount
+        println("Top up sebesar $amount berhasil. Saldo baru: $balance")
     }
 }

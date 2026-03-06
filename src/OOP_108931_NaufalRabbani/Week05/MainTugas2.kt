@@ -1,7 +1,7 @@
 package OOP_108931_NaufalRabbani.Week05
 
 fun main(){
-    val Ewallet = Ewallet("Budi", 50000)
+    val Ewallet = Ewallet("Budi", 50000.0)
     val CreditCard = CreditCard("Asep", 100000.0)
 
     val paymentMethod: List<PaymentMethod> = listOf(Ewallet, CreditCard)
@@ -10,6 +10,7 @@ fun main(){
     for(payment in paymentMethod){
         when(payment){
             is Ewallet -> {
+                payment.topUp(50000.0)
                 payment.prcoessPayment(75000.0)
             }
             is CreditCard -> {
