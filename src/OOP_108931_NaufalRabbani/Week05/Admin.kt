@@ -7,3 +7,5 @@ class Admin(name: String) : Pegawai(name){
 
     fun doAdminWork(){
         println("$name sedang merekap data absensi mahasiswa")
+    }
+}
