@@ -12,7 +12,13 @@ fun main() {
 
     println("\n === TEST REGULAR CLASS === ")
     val reg1 = RegularUser("Budi",21)
-    val reg2 = RegularUser("Siti",25)
+    val reg2 = RegularUser("Budi",21)
     println(reg1)
     println("sama? ${reg1 == reg2}")
+
+    println("\n === TEST DATA CLASS === ")
+    val data1 = DataUser("asep",21)
+    val data2 = DataUser("asep",21)
+    println(reg1)
+    println("sama? ${data1 == data2}")
 }
