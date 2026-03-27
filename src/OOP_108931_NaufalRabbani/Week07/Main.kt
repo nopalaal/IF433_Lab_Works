@@ -26,4 +26,12 @@ fun main() {
 
     val (userName, userAge) = data1
     println("Destructuring: name=$userName, age=$userAge")
+
+    println("\n=== TEST SEALED CLASS ===")
+    val response: ApiResponse = ApiResponse.Success("Data berhasil diambil")
+
+    val uimessage = when(response){
+        is ApiResponse.Success -> "Tampil: ${response.data}"
+        is ApiResponse.Error -> "Munculkan alert: ${response.message}"
+    }
 }
