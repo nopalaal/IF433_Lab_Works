@@ -21,4 +21,9 @@ fun main() {
     val data2 = DataUser("asep",21)
     println(reg1)
     println("sama? ${data1 == data2}")
+    val data3 = data1.copy(age = 23)
+    println("Hasil Copy: $data3")
+
+    val (userName, userAge) = data1
+    println("Destructuring: name=$userName, age=$userAge")
 }
