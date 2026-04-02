@@ -1,5 +1,7 @@
 package OOP_108931_NaufalRabbani.Week07
 
+import OOP_108931_NaufalRabbani.Week03.weapon
+
 fun main() {
     println("=== TEST SINGLETON ===")
     println("Status ${DatabaseManager.connectionStatus}")
@@ -40,4 +42,13 @@ fun main() {
     println("TEST GAME")
     GameManager.startGame()
     GameManager.startGame()
+
+    println(ItemRarity.LEGENDARY.dropChance)
+    val starterWeapon = Weapon.forgeStarterSword()
+
+    println("=== Starter Weapon ===")
+    println("Nama: ${starterWeapon.item.name}")
+    println("Damage: ${starterWeapon.item.damage}")
+    println("Rarity: ${starterWeapon.item.rarity}")
+    println("Durability: ${starterWeapon.durability}")
 }
