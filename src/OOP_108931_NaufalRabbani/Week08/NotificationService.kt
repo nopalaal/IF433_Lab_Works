@@ -7,9 +7,9 @@ class NotificationService{
 
     fun processUser(user: UserProfile){
         if(user.email != null){
-            sendEmail(user.email
+            sendEmail(user.email)
         } else {
-            println("No email address provided for ${user.name}"))
+            println("No email address provided for ${user.name}")
         }
     }
 }

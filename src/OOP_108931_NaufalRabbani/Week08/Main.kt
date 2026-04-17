@@ -7,4 +7,10 @@ fun main(){
     val destination = EmptyOrder.deliveryDetails?.address?.city?.name ?: "kota tidak diketahui"
 
     println("Tujuan pengiriman: $destination")
+
+    val validOrder = Order(null, 250000)
+    val receipt = validOrder.totalPrice?.let { price -> val tax = price * 0.11
+        "transaksi valid. harga : Rp$price, pajak: Rp$tax, total: Rp${price + tax}" } ?: "transaksi tidak valid"
+
+    println(receipt)
 }
