@@ -34,6 +34,12 @@ fun main(){
         val safeString = someObject as? String ?: "Bukan sebuah string"
         println(safeString)
 
-
+    println("=== TEST THE RED BUTTON ===")
+        val toxicData: String? = null
+        try {
+            val length = toxicData!!.length
+        } catch (e: NullPointerException) {
+            println("NullPointerException terjadi TERJADI CRASH")
+        }
     }
 }
