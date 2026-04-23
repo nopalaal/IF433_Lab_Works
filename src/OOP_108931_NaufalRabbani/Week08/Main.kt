@@ -1,6 +1,10 @@
 package OOP_108931_NaufalRabbani.Week08
 
 fun main(){
+
+    runMockUnitTest()
+
+
     println("=== TEST SAFE CALL & ELVIS ===")
     val EmptyOrder = Order(null,null)
 
