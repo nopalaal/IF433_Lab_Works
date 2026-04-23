@@ -34,5 +34,6 @@ fun main(){
         val safeString = someObject as? String ?: "Bukan sebuah string"
         println(safeString)
 
+
     }
 }
