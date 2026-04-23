@@ -29,5 +29,10 @@ fun main(){
             println("Ditemukan Teks: ${it.uppercase()}}")
         }
 
+        val someObject: Any = 100
+
+        val safeString = someObject as? String ?: "Bukan sebuah string"
+        println(safeString)
+
     }
 }
