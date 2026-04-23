@@ -19,5 +19,4 @@ fun main(){
             println("Corrupted data detected ${e.message}")
         }
     }
-
 }
