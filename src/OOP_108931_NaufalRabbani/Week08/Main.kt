@@ -13,4 +13,12 @@ fun main(){
         "transaksi valid. harga : Rp$price, pajak: Rp$tax, total: Rp${price + tax}" } ?: "transaksi tidak valid"
 
     println(receipt)
+
+    val mixedData: list<Any> = listof(
+        "Smartphone",
+        1500000,
+        userProfile("andi",null),
+        "laptop",
+        3500000.0,
+    )
 }
