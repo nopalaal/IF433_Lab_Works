@@ -14,11 +14,20 @@ fun main(){
 
     println(receipt)
 
-    val mixedData: list<Any> = listof(
+    val mixedData: List<Any> = listOf(
         "Smartphone",
         1500000,
-        userProfile("andi",null),
+        UserProfile("andi",null),
         "laptop",
         3500000.0,
     )
+
+    for (item in mixedData){
+        val text = item as String?
+
+        text?.let {
+            println("Ditemukan Teks: ${it.uppercase()}}")
+        }
+
+    }
 }
