@@ -13,4 +13,16 @@ fun main(){
     val asString = multiplied.map { "Rp. ${it}K" }
     println("Multiplied: $multiplied")
     println("As String: $asString")
+
+    println("HOF SORTED & FOREACH")
+    val randomName = listOf("Budi", "Andi", "Citra", "Dewi", "Eka")
+
+    val sortedReversed = randomName.sortedByDescending { it }
+
+    sortedReversed.forEach { name ->
+        println("Nama: $name")
+    }
 }
+
+
+
