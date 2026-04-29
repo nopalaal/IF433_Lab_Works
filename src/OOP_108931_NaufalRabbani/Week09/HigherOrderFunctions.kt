@@ -7,4 +7,10 @@ fun main(){
 
     val even = number.filter { it % 2 == 0 }
     println("Even: ${even}")
+
+    println("HOF:MAP")
+    val multiplied = even.map { it * 10 }
+    val asString = multiplied.map { "Rp. ${it}K" }
+    println("Multiplied: $multiplied")
+    println("As String: $asString")
 }
