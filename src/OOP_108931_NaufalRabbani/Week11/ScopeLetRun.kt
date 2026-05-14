@@ -10,4 +10,13 @@ fun main(){
         it.length
     }
     println("Panjang nama: $length")
+
+    println("TEST RUN FUNCTION")
+
+    val result = "kotlin".run {
+        println("String: $this")
+        this.length * 2
+    }
+
+    println("hasil kalkulasi run: $result")
 }
