@@ -13,4 +13,8 @@ fun main(){
    response.data.forEach { coin ->
        println("Coin: ${coin.name}, Value: ${coin.balance}")
     }
+
+    val txRepo = WalletRepository<Transcation>()
+    txRepo.addItem(Transcation("ETH",1.0))
+
 }
