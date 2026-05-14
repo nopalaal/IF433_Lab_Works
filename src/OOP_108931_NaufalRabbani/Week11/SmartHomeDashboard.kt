@@ -33,4 +33,13 @@ fun main(){
         println("\n=== Hasil Pencarian ===")
         println(it.diagnose())
     }
+
+    with(homeDevices) {
+        println("\n=== Rangkuman Smart Home ===")
+        println("Total Perangkat: ${this.size}")
+        println("Perangkat Online: ${this.count { it.isOnline }}")
+        println("Perangkat Offline: ${this.count { !it.isOnline }}")
+        println("Total Daya: ${this.sumOf { it.powerLoad }} Watt")
+    }
+
 }
