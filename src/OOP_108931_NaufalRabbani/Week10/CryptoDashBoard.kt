@@ -15,6 +15,7 @@ fun main(){
     }
 
     val txRepo = WalletRepository<Transcation>()
+
     txRepo.addItem(Transcation("ETH",1.0))
 
 }
