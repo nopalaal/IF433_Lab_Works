@@ -11,4 +11,9 @@ fun main(){
     println("\nTEST MULTIPLE TYPE PARAMETERS")
     val itemPrice = PairBox("Bitcoin", 50000)
     println("Item: ${itemPrice.key}, Price: ${itemPrice.value}")
+
+    println("\nTEST GENERIC FUNCTION")
+    printData(3.14)
+    val result = processData("Stable COin")
+    println("Hasil Data : $result")
 }
