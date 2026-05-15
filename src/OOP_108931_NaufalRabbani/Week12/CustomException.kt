@@ -15,3 +15,19 @@ class BankAccount(var balance: Double) {
     }
 
 }
+
+fun main(){
+    println("TEST MULTIPLE CATCH")
+
+    val account = BankAccount(100.0)
+
+    try{
+        account.withdraw(150.0)
+    }catch(e: InsufficientBalanceException){
+        println("Insufficient balance: ${e.message}")
+    }catch (e: IllegalArgumentException){
+        println("Caught Argument error: Input tidak valid ${e.message}")
+    }catch (e: Exception){
+        println("Caught General Error: Terjadi kesalahan tidak terduga")
+    }
+}
