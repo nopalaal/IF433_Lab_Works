@@ -27,6 +27,8 @@ fun main(){
         println("Stok makan abis: ${e.message}")
     }catch(e: Exception){
         println("Error tidak ketahui: ${e.message}")
+    }finally {
+        println("Siklus pengecekan dipenser pagi selesai")
     }
 
 }
