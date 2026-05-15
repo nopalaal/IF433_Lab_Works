@@ -32,6 +32,7 @@ fun main(){
     }
 
     currentKibble = 100
+
     runCatching{
         dispenseKibble(80, currentKibble, false)
     }.onSuccess { newStock -> currentKibble = newStock
