@@ -10,7 +10,7 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
     }
 
     if (requestedGram > availableGram){
-        throw FoodEmptyException(requestedGram, requestedGram)
+        throw FoodEmptyException(requestedGram, availableGram   )
     }
 
     return availableGram - requestedGram
@@ -18,5 +18,15 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
 
 fun main(){
     var currentKibble = 50
+
+    try {
+        dispenseKibble(80, currentKibble, false)
+    } catch (e: DispenserJamException) {
+        println("Dispenser Mati: ${e.message}")
+    }catch(e:FoodEmptyException){
+        println("Stok makan abis: ${e.message}")
+    }catch(e: Exception){
+        println("Error tidak ketahui: ${e.message}")
+    }
 
 }
