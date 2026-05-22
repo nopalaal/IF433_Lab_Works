@@ -23,4 +23,11 @@ fun main(){
     }
     }
     println("100 Baris Log Berhasil digenerate dengan sangat aman")
+
+    println("TEST BUFFERED READER")
+
+    safeFile.bufferedReader().use { reader -> reader.lineSequence().take(5).forEach {
+        line -> println("Stream Read $line")
+    }
+    }
 }
