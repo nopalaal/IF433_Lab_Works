@@ -24,23 +24,28 @@ class EmailNotifier : NotificationService {
     }
 }
 
-class BadOrderProcessor{
+interface PricingStrategy {
+    fun calculate(price: Double): Double
+}
 
-    private val file = File("orders.csv")
+class VipPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price * 0.90
+}
 
-    fun processOrder(itemName: String, basePrice: Double, customerType: String){
+class RegularPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price
+}
 
-        val finalPrice = when (customerType) {
-            "REGULAR" -> basePrice
-            "VIP" -> basePrice * 0.90
-            else -> basePrice
-        }
+class SafeOrderProcessor(
+    private val repo: OrderRepository,
+    private val notifier: NotificationService
+) {
+    fun processOrder(itemName: String, basePrice: Double, strategy: PricingStrategy) {
+        val finalPrice = strategy.calculate(basePrice)
 
-        println("memproses pesanan $itemName seharga $finalPrice")
+        println("Memproses pesanan $itemName seharga $finalPrice")
 
-        file.appendText("$itemName - $finalPrice - $customerType")
-
-        println("Email Terkirim: Pesanan $itemName anda telah dikonfirmasi")
-
+        repo.saveOrder(itemName, finalPrice, strategy::class.simpleName ?: "UNKNOWN")
+        notifier.sendNotification(itemName)
     }
 }
